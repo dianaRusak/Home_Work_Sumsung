@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Fraction1</string>
+    <string-array name="catlist">
+        <item>summation</item>
+        <item>subtractionn</item>
+        <item>division</item>
+        <item>multiplicatio</item>
+    </string-array>
+</resources>
