@@ -14,24 +14,22 @@ import static android.widget.Toast.*;
 
 public class MainActivity extends AppCompatActivity {
     public int summZn, summCh, chO, znO, ch1, zn1;
-    int gcd (int a, int b) {
-        if (b == 0)
-            return a;
-        else
-            return gcd (b, a % b);
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button button1 = (Button) findViewById(R.id.button);
+        final EditText editText = (EditText) findViewById(R.id.editText);
+        final EditText editText1 = (EditText) findViewById(R.id.editText2);
+        final EditText editText2 = (EditText) findViewById(R.id.editText3);
+        final EditText editText3 = (EditText) findViewById(R.id.editText4);
+        final TextView text = (TextView) findViewById(R.id.textView4);
+        final TextView text1 = (TextView) findViewById(R.id.textView5);
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        final String selected = spinner.getSelectedItem().toString();
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText editText = (EditText) findViewById(R.id.editText);
-                EditText editText1 = (EditText) findViewById(R.id.editText2);
-                EditText editText2 = (EditText) findViewById(R.id.editText3);
-                EditText editText3 = (EditText) findViewById(R.id.editText4);
                 String a = editText.getText().toString();
                 chO = Integer.parseInt(a);
                 String b = editText1.getText().toString();
@@ -40,10 +38,6 @@ public class MainActivity extends AppCompatActivity {
                 ch1 = Integer.parseInt(c);
                 String d = editText3.getText().toString();
                 zn1 = Integer.parseInt(d);
-                TextView text = (TextView) findViewById(R.id.textView4);
-                TextView text1 = (TextView) findViewById(R.id.textView5);
-                Spinner spinner = (Spinner) findViewById(R.id.spinner);
-                String selected = spinner.getSelectedItem().toString();
                 summZn = gcd(znO, zn1) ;
                 text1.setText(summZn);
                 switch (selected) {
@@ -69,5 +63,12 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    int gcd (int a, int b) {
+        if (b == 0)
+            return a;
+        else
+            return gcd (b, a % b);
     }
 }
