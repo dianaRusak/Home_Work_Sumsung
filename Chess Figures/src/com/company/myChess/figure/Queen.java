@@ -15,7 +15,12 @@ public class Queen extends Figure implements Move {
 
     @Override
     public void move(int x, int y) throws Exception {
-       this.x = x;
-       this.y = y;
+        if ((this.x == x && this.y != y) || (this.y == y && this.x != x) || (Math.abs(this.x - x) == Math.abs(this.y - y))) {
+            this.x = x;
+            this.y = y;
+        } else {
+            throw new Exception(Constants.ILLEGAL_MOVE_MSG);
+        }
+
     }
 }
