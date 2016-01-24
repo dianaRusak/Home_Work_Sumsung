@@ -39,26 +39,26 @@ public class MainActivity extends AppCompatActivity {
                 String d = editText3.getText().toString();
                 zn1 = Integer.parseInt(d);
                 summZn = gcd(znO, zn1) ;
-                text1.setText(summZn);
+                text1.setText(Integer.toString(summZn));
                 switch (selected) {
                     case "summation":
                         summCh = summZn / znO * chO + summZn / zn1 * ch1;
-                        text.setText(summCh);
+                        text.setText(Integer.toString(summCh));
                         break;
 
                     case "subtractionn":
                         summCh = ch1 * chO;
-                        text.setText(summCh);
+                        text.setText(Integer.toString(summCh));
                         break;
 
                     case "division":
                         summCh = chO * zn1;
-                        text.setText(summCh);
+                        text.setText(Integer.toString(summCh));
                         break;
 
                     case "multiplicatio":
                         summCh = summZn / znO * chO - summZn / zn1 * ch1;
-                        text.setText(summCh);
+                        text.setText(Integer.toString(summCh));
                         break;
                 }
             }
